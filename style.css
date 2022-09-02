@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    width: 400px;
+    height: 500px;
+    background-color: #aaa;
+    border: solid black 2px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+.screen{
+    width: 100%;
+    height: calc(100% / 5 + 20px);
+    background-color: white;
+    border: solid black 2px;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+.key{
+    width: 75px;
+    height: 75px;
+    background-color: #DDD;
+    margin: 2px;
+    border-radius: 5px;
+    border: solid black 2px;
+
+
+}
+.key.clear{
+  background-color: red;
+}
