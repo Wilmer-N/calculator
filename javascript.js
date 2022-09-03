@@ -2,34 +2,57 @@ const keys = document.querySelectorAll(".key")
 const screen = document.querySelector(".screen")
 num = ""
 num1 = 0
-ans = 0
-let array = []
+num2 = 0
+let operatorOrder = []
+
 screen.textContent = ""
+
 
 keys.forEach(key => {
     key.addEventListener("click", function(e){
         let input = e.target.innerText
         textDisplay(e)
-       if(Number.isInteger(parseInt(input))){
-        num = num + parseInt(input)
-       }else{
-        if(num1){
-            num2 = parseInt(num)
-            console.log(addition(num1, num2))
-            num1 = addition(num1, num2)
-        }else{
-        num1 = parseInt(num)
-        console.log(num1)
+        if(Number.isInteger(parseInt(input))){
+        num += input
+        }else if(input == "+"){
+            operatorOrder.push(add)
+            mathTime()
+        }else if(input == "-"){
+            operatorOrder.push(sub)
+            mathTime()
+        }else if(input == "/"){
+            operatorOrder.push(div)
+            mathTime()
+        }else if(input == "*"){
+            operatorOrder.push(mul)
+            mathTime()
         }
+
+    })});
+function mathTime(){
+    if(num1){
+        num2 = parseInt(num)
+        num1 = operatorOrder[operatorOrder.length -2](num1, num2)
+        console.log(num1)
         num = ""
-       }
-    })
-});
+    }else{
+        num1 = parseInt(num)
+        num = ""
+    }
+}
 
 
-
-function addition(num1, num2){
+function add(num1, num2){
     return num1 + num2
+}
+function sub(num1, num2){
+    return num1 - num2
+}
+function mul(num1, num2){
+    return num1 * num2
+}
+function div(num1, num2){
+    return num1 / num2
 }
 
 function textDisplay(e){
@@ -44,7 +67,3 @@ function textDisplay(e){
         screen.textContent += input
     }
 }
-
-
-
-
