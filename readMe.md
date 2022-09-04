@@ -10,3 +10,6 @@ Problems:
         once = is pressed user will have to AC for it to input values again
     display
         will display input 
+wilmer tomorrow
+ -make maximal decimal places 
+ -make "=" show the answer
