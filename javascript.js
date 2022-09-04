@@ -32,13 +32,18 @@ keys.forEach(key => {
         }}
 
     })});
+    
 function mathTime(input){
     if(num1){
         console.log(num1)
         num2 = parseInt(num)
         num1 = operatorOrder[operatorOrder.length -2](num1, num2)
         console.log(num1)
-        screen.textContent = num1 + " " + input + " "
+        if(Math.floor(num1) != num1){
+        screen.textContent = num1.toFixed(5) + " " + input + " "
+        }else{
+            screen.textContent = num1 + " " + input + " "
+        }
         num = ""
     }else{
         num1 = parseInt(num)
