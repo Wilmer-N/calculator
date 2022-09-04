@@ -29,7 +29,9 @@ keys.forEach(key => {
             mathTime(input)
         }else if(input == "="){
             equals()
-        }}
+        }}else{
+            alert("Clear to calc again :)")
+        }
 
     })});
     
